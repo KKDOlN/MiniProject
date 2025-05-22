@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="LibraryMapper">
+	<resultMap type="Library" id="libraryResultMap">
+		<id 	property="leaseNo" 		column="LEASE_NO"/>
+		<result property="bookNo" 		column="BOOK_NO"/>
+		<result property="userId" 		column="USER_ID"/>
+		<result property="leaseDate" 	column="LEASE_DATE"/>
+		<result property="returnDate" 	column="RETURN_DATE"/>
+	</resultMap>
+	<insert id="insertLIBRARY">
+		INSERT INTO LIBRARY VALUES( #{leaseNo}, #{bookNo}, #{userId}, sysdate, sysdate+7)
+	</insert>
+	<update id="updateLIBRARY">
+		UPDATE LIBRARY SET USER_ID = #{userId}, LEASE_DATE = #{leaseDate} WHERE LEASE_NO = #{leaseNo }
+	</update>
+	<delete id="deleteLIBRARY">
+		DELETE FROM BOOK WHERE LIBRARY_NO = #{leaseNo } 
+	</delete>
+	<select id="getTotalCount" resultType="_int">
+		SELECT COUNT(*) FROM LIBRARY
+	</select>
+	<select id="selectList" resultMap="libraryResultMap">
+		SELECT * FROM LIBRARY ORDER BY LEASE_NO DESC
+	</select>
+	<select id="selectOneByNo" resultMap="libraryResultMap">
+		SELECT * FROM LIBRARY WHERE LEASE_NO = #{leaseNo}
+	</select>
+	<select id="selectSearchList" resultMap="libraryResultMap">
+		SELECT * FROM LIBRARY
+		<where>
+			
+			<if test="searchCondition == 'userId'">
+				USER_ID LIKE '%'||#{searchKeyword}||'%'	
+			</if>
+			<if test="searchCondition == 'bookNo'">
+				BOOK_NO LIKE '%'||#{searchKeyword}||'%'	
+			</if>		
+		</where>
+		ORDER BY LEASE_NO DESC
+	</select>
+</mapper>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="BookNoticeMapper">
+	<resultMap type="BookNotice" id="booknoticeResultMap">
+		<id 	property="bookNo" 		column="BOOK_NO"/>
+		<result property="bookName" 	column="BOOK_NAME"/>
+		<result property="bookWriter" 	column="BOOK_WRITER"/>
+		<result property="bookPrice" 	column="BOOK_PRICE"/>
+		<result property="publisher" 	column="PUBLISHER"/>
+		<result property="genre" 		column="GENRE"/>
+	</resultMap>
+	<insert id="insertBookNotice">
+		INSERT INTO BOOK
+		VALUES(SEQ_BOOK_NO.NEXTVAL, #{bookName}, #{bookWriter}, #{bookPrice}, #{publisher}, #{genre}, 'N')
+	</insert>
+	<update id="updateBookNotice">
+		UPDATE BOOK SET BOOK_NAME = #{bookName}, BOOK_WRITER = #{bookWriter}, BOOK_PRICE = #{bookPrice}, PUBLISHER = #{publisher}, GENRE = #{genre} WHERE BOOK_NO = #{bookNo }
+	</update>
+	<delete id="deleteBookNotice">
+		UPDATE BOOK SET DEL_YN = 'Y' WHERE BOOK_NO = #{bookNo } 
+	</delete>
+	<select id="getTotalCount" resultType="_int">
+		SELECT COUNT(*) FROM BOOK WHERE DEL_YN = 'N'
+	</select>
+	<select id="selectList" resultMap="booknoticeResultMap">
+		SELECT * FROM BOOK WHERE DEL_YN = 'N' ORDER BY BOOK_NO DESC
+	</select>
+	<select id="selectOneByNo" resultMap="booknoticeResultMap">
+		SELECT * FROM BOOK WHERE DEL_YN = 'N' AND BOOK_NO = #{noticeNo}
+	</select>
+	<select id="selectSearchList" resultMap="booknoticeResultMap">
+		SELECT * FROM BOOK
+		<where>
+			<if test="searchCondition == 'bookTitle'">
+				BOOK_NAME LIKE '%'||#{searchKeyword}||'%'	
+				AND DEL_YN = 'N'	
+			</if>
+			<if test="searchCondition == 'bookCode'">
+				BOOK_NO = #{searchKeyword}		
+				AND DEL_YN = 'N'
+			</if>
+			<if test="searchCondition == 'bookWriter'">
+				BOOK_WRITER LIKE '%'||#{searchKeyword}||'%'	
+				AND DEL_YN = 'N'	
+			</if>			
+		</where>
+		ORDER BY BOOK_NO DESC
+	</select>
+</mapper>
+
+
+
+

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="MemberNoticeMapper">
+   <resultMap type="MemberNotice" id="membernoticeResultMap">
+     	<id 	property="userNo" 		column="USER_NO"/>
+		<result property="userId" 		column="USER_ID"/>
+		<result property="userName" 	column="USER_NAME"/>
+		<result property="userAge" 		column="USER_AGE"/>
+		<result property="addr" 		column="ADDR"/>
+		<result property="gender" 		column="GENDER"/>
+		<result property="enrolldate" 	column="ENROLL_DATE"/>
+	</resultMap>
+  <insert id="insertMemberNotice">
+		INSERT INTO MEMBER
+		VALUES(SEQ_MEMBER_NO.NEXTVAL, #{userId}, #{userName}, #{userAge}, #{addr}, #{gender}, sysdate, 'N')
+	</insert>
+	<update id="updateMemberNotice">
+		UPDATE MEMBER SET USER_ID = #{userId},USER_NAME = #{userName}, USER_AGE = #{userAge}, GENDER = #{gender}, ADDR = #{addr} WHERE USER_NO = #{userNo }
+	</update>
+	<delete id="deleteMemberNotice">
+		UPDATE MEMBER SET DEL_YN = 'Y' WHERE USER_NO = #{userNo } 
+	</delete>
+	<select id="getTotalCount" resultType="_int">
+		SELECT COUNT(*) FROM MEMBER WHERE DEL_YN = 'N'
+	</select>
+	<select id="selectList" resultMap="membernoticeResultMap">
+		SELECT * FROM MEMBER WHERE DEL_YN = 'N' ORDER BY USER_NO DESC
+	</select>
+	<select id="selectOneByNo" resultMap="membernoticeResultMap">
+		SELECT * FROM MEMBER WHERE USER_NO = #{userNo} AND DEL_YN = 'N'
+	</select>
+	<select id="selectSearchList" resultMap="membernoticeResultMap">
+		SELECT * FROM MEMBER
+		<where>
+			<if test="searchCondition == 'Allmember'">
+				DEL_YN = 'N'
+			</if>
+			<if test="searchCondition == 'userName'">
+				USER_NAME LIKE '%'||#{searchKeyword}||'%'
+				 AND DEL_YN = 'N'
+			</if>
+			<if test="searchCondition == 'userId'">
+				USER_ID LIKE '%'||#{searchKeyword}||'%'	
+				 AND DEL_YN = 'N'
+			</if>			
+		</where>
+		ORDER BY USER_NO DESC
+	</select>
+</mapper>
+
