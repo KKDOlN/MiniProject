@@ -27,7 +27,8 @@ property name="password" value="password"
 테이블, 시퀀스 생성 및 데이터 삽입 스크립트
 
 [ADD] db 스크립트 추가
-- [A.ONEYO.sql](https://drive.google.com/file/d/1cSPpFyTk-KAC-y55RQNaak4GEStNA7by/view?usp=sharing)
+- [MiniProject.sql](https://drive.google.com/file/d/1fSVlol9gAnROH_2Se_jvIBcKd2vklC0B/view?usp=sharing)
+  
 # 1. 기술스택
 ![Oracle](https://img.shields.io/badge/Oracle-F80000?style=for-the-badge&logo=oracle&logoColor=white)
 ![java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)
