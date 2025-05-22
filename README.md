@@ -2,7 +2,7 @@
 ![BOOKTRIX 메인페이지](https://github.com/user-attachments/assets/cf758a3c-68ce-4fc8-9c50-a93e5d38f709)
 
 ----------------------------------------------------
-# 냉장고 속 재료 기반 맞춤형 레시피 제공
+# 도서, 회원, 대여를 쉽게 관리할수 있는 기능 제공
 ## 팀 프로젝트 소개
 ![프로젝트소개](https://github.com/user-attachments/assets/8b0bc40c-2505-4432-9268-5de467d17d64)
 ## 역할 분담
