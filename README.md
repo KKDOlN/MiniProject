@@ -31,8 +31,8 @@ property name="password" value="password"
 # 1. 기술스택
 ![Oracle](https://img.shields.io/badge/Oracle-F80000?style=for-the-badge&logo=oracle&logoColor=white)
 ![java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)
-![html5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)<br>
-![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+![html5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)<br>
 ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
 ![Eclipse](https://img.shields.io/badge/Eclipse-FE7A16.svg?style=for-the-badge&logo=Eclipse&logoColor=white)
 ![Apache Tomcat](https://img.shields.io/badge/apache%20tomcat-%23F8DC75.svg?style=for-the-badge&logo=apache-tomcat&logoColor=black)
@@ -74,42 +74,55 @@ property name="password" value="password"
 # 6.화면 구현
 ### 로그인페이지
 ![BOOKTRIX 로그인페이지](https://github.com/user-attachments/assets/d9d6c172-6cb2-4dc6-8cd0-7686725aaa09)
-
+- 로그인 페이지로서 로그인하여 메인페이지로 이동할 수 있습니다.
+  
 ### 메인페이지
 ![BOOKTRIX 메인페이지](https://github.com/user-attachments/assets/9166423f-4db2-4497-b9f1-6e8d0c3410ac)
+- 도서대여 서비스 프로그램에 메인페이지로서 도서관리, 회원관리, 대여관리 페이지로 이동 가능합니다.
 
 ### 도서관리 목록페이지
 ![BOOKTRIX 도서관리 목록페이지](https://github.com/user-attachments/assets/9a63066b-d227-4aac-897c-b6147222dec8)
+- 도서관리에 목록페이지로서 등록된 도서정보(도서코드, 타이틀, 저자, 장르, 가격, 제작사)를 확인 할 수 있습니다.
 
 ### 도서관리 등록페이지
 ![BOOKTRIX 도서관리 등록페이지](https://github.com/user-attachments/assets/885ef8b3-77c5-419e-af28-9d5f17794c0e)
+- 도서를 등록할 수 있는 페이지로서 제목, 도서코드, 저자, 장르, 가격, 제작사 등을 입력하여 도서를 등록 할 수 있습니다.
 
 ### 도서관리 수정, 삭제페이지
 ![BOOKTRIX 도서관리 수정,삭제페이지](https://github.com/user-attachments/assets/1c84d911-a59c-4d1a-b44e-e5795a9b85b1)
+- 도서 수정을 할 수 있는 페이지로서 제목, 저자, 장르, 가격, 제작사 등을 수정하거나 삭제할 수 있습니다.
 
 ### 도서관리 검색페이지
 ![BOOKTRIX 도서관리 검색페이지](https://github.com/user-attachments/assets/69d33452-6bf3-4f6c-aa49-f874c28f08f5)
+- 도서관리 페이지 도서검색 페이지로 제목, 도서코드, 저자 등으로 검색할수 있습니다.
 
 ### 회원관리 목록페이지
 ![BOOKTRIX 회원관리 목록페이지](https://github.com/user-attachments/assets/d841c465-8a7e-4956-937a-a92a8c0c3566)
+- 회원관리에 목록페이지로서 고객번호, 고객아이디, 이름, 나이, 주소, 성별, 가입일 등에 관한 정보를 알 수 있습니다.
 
 ### 회원관리 등록페이지
 ![BOOKTRIX 회원등록페이지](https://github.com/user-attachments/assets/494b3b61-a304-4a75-bc1d-513eefc3b9ff)
+- 회원관리에 회원을 등록하는 페이지로서 아이디, 비밀번호, 이름, 나이, 주소, 성별을 입력한뒤 등록할 수 있습니다.
 
 ### 회원관리 수정, 삭제페이지
 ![BOOKTRIX 회원관리 수정삭제페이지](https://github.com/user-attachments/assets/e485eb46-a6ad-442c-8c48-8a7867f175cd)
+- 등록된 회원에 정보를 수정할 수 있는 펭지로 아이디, 이름, 나이, 주소, 성별 등을 변경할수 있으며 회원 정보를 삭제할 수도 있습니다.
 
 ### 회원관리 검색페이지
 ![BOOKTRIX 회원검색페이지](https://github.com/user-attachments/assets/7dacd912-09a6-4c42-9704-02d6b672a85c)
+- 회원관리 페이지에 회원검색시 회원 전체조회, 회원 이름으로 조회, 회원 아이디로 조회로 검색을 할 수 있습니다.
 
 ### 대여관리 목록페이지
 ![BOOKTRIX 대여관리 목록페이지](https://github.com/user-attachments/assets/9f391df1-4b22-4ba4-b71a-ec75a7aa188a)
+- 대여관리 목록페이지로서 책을 대여한 회원에 대한 정보(대여일, 반납일, 고객아이디 등)을 파악 가능합니다.
 
 ### 대여관리 등록페이지
 ![BOOKTRIX 대여등록페이지](https://github.com/user-attachments/assets/5d419083-cb9d-466b-b519-e3f96f0c5726)
+- 대여한 사람을 등록할 수 있는 페이지로서 대여번호, 책번호, 고객아이디등을 입력한뒤 등록하게 됩니다.
 
 ### 대여관리 검색페이지
 ![BOOKTRIX 대여관리 검색페이지](https://github.com/user-attachments/assets/a4c9bfea-6a45-4bc6-bdd2-3b3d94f5aad0)
+- 대여관리 페이지에 대여검색시 대여 관리 전체조회, 회원아이디로 대여조회, 책번호로 대여조회로 검색을 할 수 있습니다.
 
 
 # 7. 프로젝트 후기
