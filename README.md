@@ -3,32 +3,7 @@
 
 ----------------------------------------------------
 # 도서, 회원, 대여를 쉽게 관리할수 있는 기능 제공
-## 팀 프로젝트 소개
-![프로젝트소개](https://github.com/user-attachments/assets/8b0bc40c-2505-4432-9268-5de467d17d64)
-## 역할 분담
-![역할분담](https://github.com/user-attachments/assets/ad960004-05c1-447a-973d-953805e883dd)
-## 차별성
-![차별성](https://github.com/user-attachments/assets/067ad8df-2ff8-4ddc-b152-36a5a9c2471c)
 
-## 프로젝트 개발환경
-- DB : Oracle 11g xe 버전 이용
-- Eclipse 이용
-## 프로젝트 실행 환경 구축(로컬)
-1. 오라클 11g 설치 및 application.properties의
-```properties
-# Oracle Connection Setting
-property name="driver" value="com.mysql.cj.jdbc.Driver"
-property name="url" value="jdbc:mysql://localhost:3306/AteamDB"
-property name="username" value="root" 
-property name="password" value="password" 
-```
-를 참고하여 로컬에 db 계정 생성
-계정 생성 후 권한 부여 및 테이블 생성
-테이블, 시퀀스 생성 및 데이터 삽입 스크립트
-
-[ADD] db 스크립트 추가
-- [MiniProject.sql](https://drive.google.com/file/d/1fSVlol9gAnROH_2Se_jvIBcKd2vklC0B/view?usp=sharing)
-  
 # 1. 기술스택
 ![Oracle](https://img.shields.io/badge/Oracle-F80000?style=for-the-badge&logo=oracle&logoColor=white)
 ![java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)
@@ -38,13 +13,16 @@ property name="password" value="password"
 ![Eclipse](https://img.shields.io/badge/Eclipse-FE7A16.svg?style=for-the-badge&logo=Eclipse&logoColor=white)
 ![Apache Tomcat](https://img.shields.io/badge/apache%20tomcat-%23F8DC75.svg?style=for-the-badge&logo=apache-tomcat&logoColor=black)
 
-# 2. 브랜치 전략
-## Git Flow 방식
-- 팀원 각자의 브랜치를 만들어 개발 진행
-- 기능 구현이 완료되면 Main 브랜치에 병합
-  ![git_flow](https://github.com/2405PublicJavaDev/sulgilddara/blob/main/img/github_flow.png?raw=true)
-# 3. 프로젝트 구조
+# 2. 프로젝트 구조
 [프로젝트.PDF](https://drive.google.com/file/d/1TJiXMqMjiDiM2O7P7YARYeI8jkwPc_XS/view?usp=sharing)
+
+# 3. 프로젝트 후기
+이번 프로젝트는 처음으로 백엔드 전반을 단독으로 구현해보는 도전적인 경험이었으며, 실질적인 개발 역량을 키우는 데 큰 도움이 되었습니다. 프로젝트 초기에 전체 데이터 흐름과 기능 목록을 분석한 후, 도서관리, 회원관리, 대여관리 각 기능에 필요한 DB 테이블을 직접 설계하고, Java와 JDBC를 이용해 CRUD 및 검색 기능을 구현했습니다. 단순히 동작하는 코드를 만드는 것이 아니라, 입력 유효성 검증, 예외 처리, 조건별 검색 로직 설계 등 실제 서비스에 가까운 기능을 구현하면서 문제 해결 능력을 키울 수 있었습니다.
+특히 검색 기능의 경우, 도서코드, 제목, 저자 등 다양한 조건에 따라 유연하게 검색이 가능하도록 쿼리 구조를 설계하였고, 대여 관리 기능에서는 외래키 관계를 고려한 조회 기능을 구현하며 데이터 간 연계성에 대한 이해도도 높일 수 있었습니다. 또한, 백엔드 전체 로직을 직접 구상하면서 JDBC 연결, SQL 쿼리 조작, 예외 상황 처리 등 핵심 기술 요소들을 깊이 있게 다룰 수 있는 기회가 되었습니다.
+기술 외적으로는, 팀원 중 한 분이 프로젝트에 거의 참여하지 못한 상황에서 부담이 컸지만, 그만큼 책임감을 갖고 계획을 세워 하나씩 해결해나가며 주도적으로 프로젝트를 완수할 수 있었습니다. 협업과 분담이 중요한 개발 환경에서 이러한 경험은 실제 개발 현장에서의 유연한 대응력과 커뮤니케이션의 중요성을 느끼게 해주었습니다.
+향후에는 기능 단위 테스트를 더 철저히 하고, 대여관리 기능에도 수정 및 삭제 기능을 추가하여 더 완성도 높은 프로그램을 만드는 것이 목표입니다. 또한 팀 프로젝트에서 발생할 수 있는 변수에 유연하게 대응하기 위해 형상 관리(Git)의 적극적인 활용과 작업 분배 기준의 명확화를 앞으로의 과제로 삼을 생각입니다.
+
+
 # 4. 주요기능 
 ### 도서관리
 |기능명|상세|
@@ -68,11 +46,7 @@ property name="password" value="password"
 |대여 등록|대여번호, 책번호, 고객아이디 등을 입력하여 대여 정보를 등록 할 수 있습니다.|
 |대여 검색(조회)|대여 관리 전체 조회,  회원 아이디로 대여 조회, 책번호로 대여 조회 등으로 검색(조회) 가능합니다.|
 
-
-# 5.개발일정
-![개발일정](https://github.com/user-attachments/assets/9c867c03-307b-4882-a4f3-ab1c268a6db6)
-
-# 6.화면 구현
+# 5.화면 구현
 ### 로그인페이지
 ![BOOKTRIX 로그인페이지](https://github.com/user-attachments/assets/d9d6c172-6cb2-4dc6-8cd0-7686725aaa09)
 - 로그인 페이지로서 로그인하여 메인페이지로 이동할 수 있습니다.
@@ -124,22 +98,3 @@ property name="password" value="password"
 ### 대여관리 검색페이지
 ![BOOKTRIX 대여관리 검색페이지](https://github.com/user-attachments/assets/a4c9bfea-6a45-4bc6-bdd2-3b3d94f5aad0)
 - 대여관리 페이지에 대여검색시 대여 관리 전체조회, 회원아이디로 대여조회, 책번호로 대여조회로 검색을 할 수 있습니다.
-
-
-# 7. 프로젝트 후기
-이번 프로젝트는 처음으로 백엔드 전반을 단독으로 구현해보는 도전적인 경험이었으며, 실질적인 개발 역량을 키우는 데 큰 도움이 되었습니다. 프로젝트 초기에 전체 데이터 흐름과 기능 목록을 분석한 후, 도서관리, 회원관리, 대여관리 각 기능에 필요한 DB 테이블을 직접 설계하고, Java와 JDBC를 이용해 CRUD 및 검색 기능을 구현했습니다. 단순히 동작하는 코드를 만드는 것이 아니라, 입력 유효성 검증, 예외 처리, 조건별 검색 로직 설계 등 실제 서비스에 가까운 기능을 구현하면서 문제 해결 능력을 키울 수 있었습니다.
-특히 검색 기능의 경우, 도서코드, 제목, 저자 등 다양한 조건에 따라 유연하게 검색이 가능하도록 쿼리 구조를 설계하였고, 대여 관리 기능에서는 외래키 관계를 고려한 조회 기능을 구현하며 데이터 간 연계성에 대한 이해도도 높일 수 있었습니다. 또한, 백엔드 전체 로직을 직접 구상하면서 JDBC 연결, SQL 쿼리 조작, 예외 상황 처리 등 핵심 기술 요소들을 깊이 있게 다룰 수 있는 기회가 되었습니다.
-기술 외적으로는, 팀원 중 한 분이 프로젝트에 거의 참여하지 못한 상황에서 부담이 컸지만, 그만큼 책임감을 갖고 계획을 세워 하나씩 해결해나가며 주도적으로 프로젝트를 완수할 수 있었습니다. 협업과 분담이 중요한 개발 환경에서 이러한 경험은 실제 개발 현장에서의 유연한 대응력과 커뮤니케이션의 중요성을 느끼게 해주었습니다.
-향후에는 기능 단위 테스트를 더 철저히 하고, 대여관리 기능에도 수정 및 삭제 기능을 추가하여 더 완성도 높은 프로그램을 만드는 것이 목표입니다. 또한 팀 프로젝트에서 발생할 수 있는 변수에 유연하게 대응하기 위해 형상 관리(Git)의 적극적인 활용과 작업 분배 기준의 명확화를 앞으로의 과제로 삼을 생각입니다.
-
-
-
-# 프로젝트 산출문서
-- [기획보고서](https://drive.google.com/file/d/1Y3C14sBiMuAqhevhRxZlfjbmgGT4GhmF/view?usp=sharing)
-- [요구사항정의서](https://drive.google.com/file/d/1RgoGpFdt7A6zdXNJZFLO3oyVxlTvvoMP/view?usp=sharing)
-- [와이어프레임](https://drive.google.com/file/d/1drb5eNbOQtC9XqX8JaLTMBPpR8I4RiNi/view?usp=sharing)
-- [DB설계](https://drive.google.com/file/d/1SE5tLfgGzGzj8OrBYAIF9nInZ62CDEUw/view?usp=sharing)
-- [시퀀스 다이어그램](https://drive.google.com/file/d/1irW7kdzmYZ89WgiY9pEnN1GOeHFss63n/view?usp=sharing)
-- [최종보고서](https://drive.google.com/file/d/15LTXkWCVk_EyxEJraH7CNYtN0ssnEkft/view?usp=sharing)
-- [프로젝스 소스 DB](https://drive.google.com/file/d/1cSPpFyTk-KAC-y55RQNaak4GEStNA7by/view?usp=sharing)
-- [시연영상](https://drive.google.com/file/d/1DTl3d_0OV_ZmpOyd2yzz-2jdzmypbnID/view?usp=sharing)
