@@ -56,7 +56,7 @@
 - 도서대여 서비스 프로그램에 메인페이지로서 도서관리, 회원관리, 대여관리 페이지로 이동 가능합니다.
 
 ### 도서관리 목록페이지
-![image](https://github.com/user-attachments/assets/990be363-b079-4a4e-85af-3663976d22b7)
+![BOOKTRIX 도서관리 목록페이지](https://github.com/user-attachments/assets/9a63066b-d227-4aac-897c-b6147222dec8)
 - 도서관리에 목록페이지로서 등록된 도서정보(도서코드, 타이틀, 저자, 장르, 가격, 제작사)를 확인 할 수 있습니다.
 
 ### 도서관리 등록페이지
